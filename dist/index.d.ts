@@ -5,21 +5,21 @@
 //   ../ws
 //   ../undici
 
-declare module 'erela.js' {
-    export * from "erela.js/structures/Manager";
-    export * from "erela.js/structures/Node";
-    export * from "erela.js/structures/Player";
-    export * from "erela.js/structures/Queue";
-    export * from "erela.js/structures/Utils";
+declare module '@skinnek/erela.js' {
+    export * from "@skinnek/erela.js/structures/Manager";
+    export * from "@skinnek/erela.js/structures/Node";
+    export * from "@skinnek/erela.js/structures/Player";
+    export * from "@skinnek/erela.js/structures/Queue";
+    export * from "@skinnek/erela.js/structures/Utils";
 }
 
-declare module 'erela.js/structures/Manager' {
+declare module '@skinnek/erela.js/structures/Manager' {
     import Collection from "@discordjs/collection";
     import { EventEmitter } from "events";
-    import { VoiceState } from "erela.js///erela.js";
-    import { Node, NodeOptions } from "erela.js/structures/Node";
-    import { Player, PlayerOptions, Track, UnresolvedTrack } from "erela.js/structures/Player";
-    import { LoadType, Plugin, TrackData, TrackEndEvent, TrackExceptionEvent, TrackStartEvent, TrackStuckEvent, VoicePacket, VoiceServer, WebSocketClosedEvent } from "erela.js/structures/Utils";
+    import { VoiceState } from "@skinnek/erela.js";
+    import { Node, NodeOptions } from "@skinnek/erela.js/structures/Node";
+    import { Player, PlayerOptions, Track, UnresolvedTrack } from "@skinnek/erela.js/structures/Player";
+    import { LoadType, Plugin, TrackData, TrackEndEvent, TrackExceptionEvent, TrackStartEvent, TrackStuckEvent, VoicePacket, VoiceServer, WebSocketClosedEvent } from "@skinnek/erela.js/structures/Utils";
     export interface Manager {
             /**
                 * Emitted when a Node is created.
@@ -264,12 +264,12 @@ declare module 'erela.js/structures/Manager' {
     }
 }
 
-declare module 'erela.js/structures/Node' {
+declare module '@skinnek/erela.js/structures/Node' {
     import WebSocket from "ws";
     import { Dispatcher, Pool } from "undici";
-    import { Manager } from "erela.js/structures/Manager";
-    import { Player, Track, UnresolvedTrack } from "erela.js/structures/Player";
-    import { PlayerEvent, PlayerEvents, TrackEndEvent, TrackExceptionEvent, TrackStartEvent, TrackStuckEvent, WebSocketClosedEvent } from "erela.js/structures/Utils";
+    import { Manager } from "@skinnek/erela.js/structures/Manager";
+    import { Player, Track, UnresolvedTrack } from "@skinnek/erela.js/structures/Player";
+    import { PlayerEvent, PlayerEvents, TrackEndEvent, TrackExceptionEvent, TrackStartEvent, TrackStuckEvent, WebSocketClosedEvent } from "@skinnek/erela.js/structures/Utils";
     export class Node {
             options: NodeOptions;
             /** The socket for the node. */
@@ -382,11 +382,11 @@ declare module 'erela.js/structures/Node' {
     }
 }
 
-declare module 'erela.js/structures/Player' {
-    import { Manager, SearchQuery, SearchResult } from "erela.js/structures/Manager";
-    import { Node } from "erela.js/structures/Node";
-    import { Queue } from "erela.js/structures/Queue";
-    import { Sizes, State, VoiceState } from "erela.js/structures/Utils";
+declare module '@skinnek/erela.js/structures/Player' {
+    import { Manager, SearchQuery, SearchResult } from "@skinnek/erela.js/structures/Manager";
+    import { Node } from "@skinnek/erela.js/structures/Node";
+    import { Queue } from "@skinnek/erela.js/structures/Queue";
+    import { Sizes, State, VoiceState } from "@skinnek/erela.js/structures/Utils";
     export class Player {
             options: PlayerOptions;
             /** The Queue for the Player. */
@@ -580,8 +580,8 @@ declare module 'erela.js/structures/Player' {
     }
 }
 
-declare module 'erela.js/structures/Queue' {
-    import { Track, UnresolvedTrack } from "erela.js/structures/Player";
+declare module '@skinnek/erela.js/structures/Queue' {
+    import { Track, UnresolvedTrack } from "@skinnek/erela.js/structures/Player";
     /**
         * The player's queue, the `current` property is the currently playing track, think of the rest as the up-coming tracks.
         * @noInheritDoc
@@ -621,11 +621,11 @@ declare module 'erela.js/structures/Queue' {
     }
 }
 
-declare module 'erela.js/structures/Utils' {
-    import { Manager } from "erela.js/structures/Manager";
-    import { Node, NodeStats } from "erela.js/structures/Node";
-    import { Player, Track, UnresolvedTrack } from "erela.js/structures/Player";
-    import { Queue } from "erela.js/structures/Queue";
+declare module '@skinnek/erela.js/structures/Utils' {
+    import { Manager } from "@skinnek/erela.js/structures/Manager";
+    import { Node, NodeStats } from "@skinnek/erela.js/structures/Node";
+    import { Player, Track, UnresolvedTrack } from "@skinnek/erela.js/structures/Player";
+    import { Queue } from "@skinnek/erela.js/structures/Queue";
     export abstract class TrackUtils {
             static trackPartial: string[] | null;
             /** @hidden */
