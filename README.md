@@ -1,4 +1,4 @@
-> This is a form of erela.js
+> This is a fork of erela.js
 
 <div align = "center">
     <img src = "https://solaris-site.netlify.app/projects/erelajs/images/transparent_logo.png">
