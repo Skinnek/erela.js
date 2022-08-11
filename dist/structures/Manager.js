@@ -8,13 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Manager = void 0;
 /* eslint-disable no-async-promise-executor */
-const collection_1 = __importDefault(require("@discordjs/collection"));
+const collection_1 = require("@discordjs/collection");
 const events_1 = require("events");
 const Utils_1 = require("./Utils");
 const REQUIRED_KEYS = ["event", "guildId", "op", "sessionId"];
@@ -60,9 +57,9 @@ class Manager extends events_1.EventEmitter {
     constructor(options) {
         super();
         /** The map of players. */
-        this.players = new collection_1.default();
+        this.players = new collection_1.Collection();
         /** The map of nodes. */
-        this.nodes = new collection_1.default();
+        this.nodes = new collection_1.Collection();
         this.initiated = false;
         check(options);
         Utils_1.Structure.get("Player").init(this);

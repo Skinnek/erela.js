@@ -14,7 +14,7 @@ declare module '@skinnek/erela.js' {
 }
 
 declare module '@skinnek/erela.js/structures/Manager' {
-    import Collection from "@discordjs/collection";
+    import { Collection } from "@discordjs/collection";
     import { EventEmitter } from "events";
     import { VoiceState } from "@skinnek/erela.js";
     import { Node, NodeOptions } from "@skinnek/erela.js/structures/Node";
